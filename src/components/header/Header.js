@@ -9,10 +9,10 @@ class Header extends React.Component {
         this.state = {
             converter: 'Currency'
         }
-        this.submitConverter = this.submitConverter.bind(this);
+        this.clickConverter = this.clickConverter.bind(this);
     }
 
-    submitConverter(converter) {
+    clickConverter(converter) {
         this.setState({converter: converter});
         const { onClick } = this.props;
 
@@ -20,7 +20,7 @@ class Header extends React.Component {
     }
 
     renderConverter(converter, id) {
-        return <Button color="primary" value={converter} key={id} onClick={() => this.submitConverter(converter)}>{converter}</Button>
+        return <Button color="primary" value={converter} key={id} onClick={() => this.clickConverter(converter)}>{converter}</Button>
     }
 
     render() {

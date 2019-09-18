@@ -10,17 +10,17 @@ class Converter extends React.Component {
         this.state = {
             converter: ''
         };
-        this.onNavSubmit = this.onNavSubmit.bind(this);
+        this.onConverterSelect = this.onConverterSelect.bind(this);
     }
 
-    onNavSubmit(converter) {
+    onConverterSelect(converter) {
         this.setState({ converter });
     }
     render() {
         let appConverters = ['Currency', 'Weight', 'Temperature', 'Time', 'Length'];
         return (
             <div>
-                <Header converters={appConverters} onClick={this.onNavSubmit}/>
+                <Header converters={appConverters} onClick={this.onConverterSelect}/>
                 <Container>{this.state.converter}</Container>
             </div>
         );
