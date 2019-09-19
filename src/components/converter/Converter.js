@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../header/Header';
-import { Container } from 'reactstrap';
+import Convert from '../convert/Convert';
+import * as currencies from '../../mock-data/currencies';
 
 class Converter extends React.Component {
 
@@ -8,7 +9,7 @@ class Converter extends React.Component {
         super(props);
 
         this.state = {
-            converter: ''
+            converter: 'Currency'
         };
         this.onConverterSelect = this.onConverterSelect.bind(this);
     }
@@ -21,7 +22,7 @@ class Converter extends React.Component {
         return (
             <div>
                 <Header converters={appConverters} onClick={this.onConverterSelect}/>
-                <Container>{this.state.converter}</Container>
+                <Convert converter={this.state.converter} currencies={currencies.CURRENCIES}/>
             </div>
         );
     }
